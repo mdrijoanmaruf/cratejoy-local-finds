@@ -1,4 +1,3 @@
-
 export interface Review {
   id: string;
   name: string;
@@ -30,11 +29,11 @@ export const subscriptions: Subscription[] = [
     description: "A monthly box filled with the latest tech gadgets, accessories, and innovative products for tech lovers.",
     price: 49.99,
     frequency: "Monthly",
-    thumbnail: "https://i.postimg.cc/Qd1S82vp/tech-box.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://i.postimg.cc/Qd1S82vp/tech-box.jpg",
-      "https://i.postimg.cc/Y06Lz4gT/tech-gadgets.jpg",
-      "https://i.postimg.cc/FRVDQzd6/tech-accessories.jpg",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "4-6 tech products each month",
@@ -70,11 +69,11 @@ export const subscriptions: Subscription[] = [
     description: "Discover gourmet snacks from around the world delivered to your door every month.",
     price: 34.99,
     frequency: "Monthly",
-    thumbnail: "https://i.postimg.cc/05LwzXzp/food-box.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://i.postimg.cc/05LwzXzp/food-box.jpg",
-      "https://i.postimg.cc/L57w0jvm/snacks.jpg",
-      "https://i.postimg.cc/3JCLPsXr/gourmet.jpg",
+      "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "8-10 gourmet snacks per box",
@@ -110,11 +109,11 @@ export const subscriptions: Subscription[] = [
     description: "A curated selection of new releases and classics based on your reading preferences.",
     price: 29.99,
     frequency: "Monthly",
-    thumbnail: "https://i.postimg.cc/ZKTWdGK2/book-box.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://i.postimg.cc/ZKTWdGK2/book-box.jpg",
-      "https://i.postimg.cc/7ZLPXzpJ/books.jpg",
-      "https://i.postimg.cc/MKTRXQ3L/reading-accessories.jpg",
+      "https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1530538987395-032d1800fdd4?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "2 hardcover books per month",
@@ -150,11 +149,11 @@ export const subscriptions: Subscription[] = [
     description: "Luxury self-care and wellness products for your mind, body, and soul.",
     price: 45.99,
     frequency: "Monthly",
-    thumbnail: "https://i.postimg.cc/gjRmqFXk/wellness-box.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://i.postimg.cc/gjRmqFXk/wellness-box.jpg",
-      "https://i.postimg.cc/MTpCJHfY/spa.jpg",
-      "https://i.postimg.cc/SsX3dYvb/selfcare.jpg",
+      "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "5-7 premium wellness products",
@@ -190,11 +189,11 @@ export const subscriptions: Subscription[] = [
     description: "Everything you need to support your fitness journey and active lifestyle.",
     price: 39.99,
     frequency: "Monthly",
-    thumbnail: "https://i.postimg.cc/g0jbpQcR/fitness-box.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://i.postimg.cc/g0jbpQcR/fitness-box.jpg",
-      "https://i.postimg.cc/1XHT7c4c/workout-accessories.jpg",
-      "https://i.postimg.cc/CxX9Cvnv/fitness-nutrition.jpg",
+      "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "Workout accessories",
@@ -230,11 +229,11 @@ export const subscriptions: Subscription[] = [
     description: "Monthly box of treats, toys, and accessories for your furry friend.",
     price: 32.99,
     frequency: "Monthly",
-    thumbnail: "https://i.postimg.cc/FKHRzCWr/pet-box.jpg",
+    thumbnail: "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=800&q=80",
     images: [
-      "https://i.postimg.cc/FKHRzCWr/pet-box.jpg",
-      "https://i.postimg.cc/4d8Ptdr5/pet-toys.jpg",
-      "https://i.postimg.cc/PqDGk9zB/pet-treats.jpg",
+      "https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1568640347023-a616a30bc3bd?auto=format&fit=crop&w=800&q=80",
+      "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=800&q=80",
     ],
     features: [
       "5-7 premium pet items",

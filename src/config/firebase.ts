@@ -7,7 +7,7 @@ const firebaseConfig = {
   apiKey: "AIzaSyDdzdjMC2m-yAUvpU7JXR9077tza07uYlA",
   authDomain: "boxsupscription.firebaseapp.com",
   projectId: "boxsupscription",
-  storageBucket: "boxsupscription.firebasestorage.app",
+  storageBucket: "boxsupscription.appspot.com",
   messagingSenderId: "684629630406",
   appId: "1:684629630406:web:29ac1e207ad6ade913a6c7"
 };
