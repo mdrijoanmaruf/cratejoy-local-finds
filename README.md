@@ -1,73 +1,69 @@
-# Welcome to your Lovable project
 
-## Project info
+# BoxWave - Premium Subscription Box Service
 
-**URL**: https://lovable.dev/projects/c027e415-c562-4a2c-9e10-751998864039
+BoxWave is a web application that enables users to easily browse, subscribe to, and manage monthly subscription boxes based on their preferences. This service offers a personalized experience where customers can select boxes for various products or services.
 
-## How can I edit this code?
+## Live URL
 
-There are several ways of editing your application.
+https://lovable.dev/projects/c027e415-c562-4a2c-9e10-751998864039
 
-**Use Lovable**
+## Key Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/c027e415-c562-4a2c-9e10-751998864039) and start prompting.
+- **User Authentication**: Secure email/password and Google login/registration
+- **Responsive Design**: Fully responsive on mobile, tablet, and desktop
+- **Subscription Box Gallery**: Browse a variety of curated subscription boxes 
+- **Detailed Box Pages**: View in-depth information about each subscription box
+- **User Profiles**: Personalized profiles with editable information
+- **Review System**: Leave reviews and ratings for subscription boxes
+- **Password Reset**: Easily reset your password via email
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies Used
 
-**Use your preferred IDE**
+- **React**: Front-end library for building the user interface
+- **TypeScript**: Type safety for JavaScript
+- **Tailwind CSS**: Utility-first CSS framework for styling
+- **Lucide Icons**: Beautiful, customizable icons
+- **AOS**: Animate On Scroll library for smooth animations
+- **React Router**: Navigation and routing
+- **React Context API**: State management 
+- **Shadcn UI**: UI component library
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## NPM Packages Used
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- @tanstack/react-query: Data fetching and state management
+- aos: Animation library for scroll effects
+- lucide-react: Icon library
+- react-router-dom: Routing
+- sonner: Toast notifications
+- clsx & tailwind-merge: Utility for conditional CSS classes
+- Other UI component libraries like shadcn
 
-Follow these steps:
+## Project Structure
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **/src/components**: Reusable UI components
+- **/src/pages**: Main application pages
+- **/src/contexts**: Context providers for state management
+- **/src/data**: Mockup data for subscriptions
+- **/src/hooks**: Custom React hooks
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## Getting Started
 
-# Step 3: Install the necessary dependencies.
-npm i
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Start the development server: `npm run dev`
+4. Open your browser at: `http://localhost:8080`
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+## Features In Development
 
-**Edit a file directly in GitHub**
+- Payment integration
+- Subscription management dashboard
+- Personalized recommendations
+- Enhanced filtering and search
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Authors
 
-**Use GitHub Codespaces**
+- BoxWave Team
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## License
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/c027e415-c562-4a2c-9e10-751998864039) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is private and not licensed for public use.
