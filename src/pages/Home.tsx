@@ -5,6 +5,8 @@ import { ChevronRight } from "lucide-react";
 import { subscriptions } from "../data/subscriptions";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { useAuth } from "../contexts/AuthContext";
+import { toast } from "sonner";
 
 // Adding AOS for animations
 import AOS from "aos";
@@ -27,7 +29,7 @@ const HeroSlider = () => {
         <div className="w-full h-full flex-shrink-0">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/80 to-primary/40 mix-blend-multiply"></div>
           <img 
-            src="https://i.postimg.cc/L8nH6HSh/hero-subscription.jpg" 
+            src="https://images.unsplash.com/photo-1721322800607-8c38375eef04" 
             alt="Subscription Boxes" 
             className="object-cover w-full h-full"
           />
@@ -53,6 +55,32 @@ const HeroSlider = () => {
 };
 
 const SubscriptionCard = ({ subscription }: { subscription: typeof subscriptions[0] }) => {
+  const { currentUser } = useAuth();
+  
+  const handleSubscribe = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!currentUser) {
+      toast.error("Please log in to subscribe to this box");
+      return;
+    }
+    
+    toast.success(`You've successfully subscribed to ${subscription.name}!`, {
+      description: "Your first box will be shipped soon.",
+    });
+  };
+  
+  const handleAddToWishlist = (e: React.MouseEvent) => {
+    e.preventDefault();
+    if (!currentUser) {
+      toast.error("Please log in to add items to your wishlist");
+      return;
+    }
+    
+    toast.success(`${subscription.name} added to your wishlist!`, {
+      description: "You can find it in your profile.",
+    });
+  };
+  
   return (
     <Card className="h-full overflow-hidden transition-all hover:shadow-lg hover:-translate-y-1">
       <div className="aspect-video w-full overflow-hidden">
@@ -78,15 +106,21 @@ const SubscriptionCard = ({ subscription }: { subscription: typeof subscriptions
           {subscription.description}
         </p>
       </CardContent>
-      <CardFooter className="flex justify-between items-center">
-        <div className="font-semibold text-lg">
-          ${subscription.price.toFixed(2)}
+      <CardFooter className="flex flex-col gap-2">
+        <div className="flex justify-between items-center w-full">
+          <div className="font-semibold text-lg">
+            ${subscription.price.toFixed(2)}
+          </div>
+          <Button variant="outline" asChild>
+            <Link to={`/subscription/${subscription.id}`}>
+              View Details <ChevronRight size={16} className="ml-1" />
+            </Link>
+          </Button>
         </div>
-        <Button variant="outline" asChild>
-          <Link to={`/subscription/${subscription.id}`}>
-            View Details <ChevronRight size={16} className="ml-1" />
-          </Link>
-        </Button>
+        <div className="flex gap-2 w-full">
+          <Button variant="default" className="w-1/2" onClick={handleSubscribe}>Subscribe</Button>
+          <Button variant="secondary" className="w-1/2" onClick={handleAddToWishlist}>Wishlist</Button>
+        </div>
       </CardFooter>
     </Card>
   );

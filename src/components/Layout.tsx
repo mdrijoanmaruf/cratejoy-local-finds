@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { NavigationProvider } from "../contexts/NavigationContext";
 
 const Layout = () => {
   const { pathname } = useLocation();
@@ -14,13 +15,15 @@ const Layout = () => {
   }, [pathname]);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
+    <NavigationProvider>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="flex-grow">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+    </NavigationProvider>
   );
 };
 

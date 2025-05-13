@@ -16,6 +16,7 @@ import Profile from "./pages/Profile";
 import ProtectedRoute from "./components/ProtectedRoute";
 import ForgotPassword from "./pages/ForgotPassword";
 import About from "./pages/About";
+import TrackOrder from "./pages/TrackOrder";
 
 // Context
 import { AuthProvider } from "./contexts/AuthContext";
@@ -44,6 +45,7 @@ const App = () => (
               <Route path="register" element={<Register />} />
               <Route path="forgot-password" element={<ForgotPassword />} />
               <Route path="about" element={<About />} />
+              <Route path="track-order" element={<TrackOrder />} />
               <Route path="subscription/:id" element={
                 <ProtectedRoute>
                   <SubscriptionDetail />

@@ -8,6 +8,8 @@ import { useAuth } from "../contexts/AuthContext";
 import { Separator } from "@/components/ui/separator";
 import { StarIcon } from "lucide-react";
 import { toast } from "sonner";
+import ImageGallery from "../components/ImageGallery";
+import { Share, Heart } from "lucide-react";
 
 // Title component for dynamic page title
 const Title = ({ title }: { title: string }) => {
@@ -35,6 +37,7 @@ const SubscriptionDetail = () => {
   const [newReview, setNewReview] = useState("");
   const [rating, setRating] = useState(5);
   const [reviews, setReviews] = useState<Review[]>([]);
+  const [isWishlisted, setIsWishlisted] = useState(false);
   const [selectedImage, setSelectedImage] = useState(subscription?.images[0] || "");
   
   useEffect(() => {
@@ -59,6 +62,49 @@ const SubscriptionDetail = () => {
       </div>
     );
   }
+
+  const handleSubscribe = () => {
+    if (!currentUser) {
+      toast.error("Please log in to subscribe");
+      return;
+    }
+    
+    toast.success(`You've successfully subscribed to ${subscription.name}!`, {
+      description: "Your first box will be shipped soon.",
+    });
+  };
+
+  const handleAddToWishlist = () => {
+    if (!currentUser) {
+      toast.error("Please log in to add items to your wishlist");
+      return;
+    }
+    
+    setIsWishlisted(!isWishlisted);
+    
+    if (!isWishlisted) {
+      toast.success(`${subscription.name} added to your wishlist!`);
+    } else {
+      toast.success(`${subscription.name} removed from your wishlist!`);
+    }
+  };
+  
+  const handleShare = () => {
+    if (navigator.share) {
+      navigator.share({
+        title: subscription.name,
+        text: `Check out this awesome subscription box: ${subscription.name}`,
+        url: window.location.href
+      }).then(() => {
+        toast.success("Shared successfully!");
+      }).catch((error) => {
+        toast.error("Error sharing");
+      });
+    } else {
+      navigator.clipboard.writeText(window.location.href);
+      toast.success("Link copied to clipboard!");
+    }
+  };
 
   const handleReviewSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -117,29 +163,7 @@ const SubscriptionDetail = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="space-y-4">
-              <div className="bg-white rounded-lg overflow-hidden border">
-                <img 
-                  src={selectedImage}
-                  alt={subscription.name}
-                  className="w-full h-80 object-cover"
-                />
-              </div>
-              
-              <div className="grid grid-cols-3 gap-2">
-                {subscription.images.map((image, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setSelectedImage(image)}
-                    className={`border rounded overflow-hidden ${selectedImage === image ? 'ring-2 ring-primary' : ''}`}
-                  >
-                    <img 
-                      src={image}
-                      alt={`${subscription.name} thumbnail ${index + 1}`}
-                      className="w-full h-24 object-cover"
-                    />
-                  </button>
-                ))}
-              </div>
+              <ImageGallery images={subscription.images} />
             </div>
             
             <div>
@@ -172,14 +196,31 @@ const SubscriptionDetail = () => {
                   </ul>
                 </div>
                 
-                <div className="mt-8">
-                  <Button size="lg" className="w-full mb-4">
+                <div className="mt-8 grid grid-cols-2 gap-4">
+                  <Button size="lg" className="w-full" onClick={handleSubscribe}>
                     Subscribe Now
                   </Button>
-                  <Button variant="outline" size="lg" className="w-full">
-                    Add to Wishlist
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className={`w-full ${isWishlisted ? 'bg-primary/10' : ''}`}
+                    onClick={handleAddToWishlist}
+                  >
+                    <Heart className={`mr-2 ${isWishlisted ? 'fill-primary text-primary' : ''}`} size={18} />
+                    {isWishlisted ? 'Wishlisted' : 'Add to Wishlist'}
                   </Button>
                 </div>
+
+                <div className="mt-4">
+                  <Button variant="ghost" size="sm" onClick={handleShare} className="w-full">
+                    <Share size={16} className="mr-2" /> Share This Box
+                  </Button>
+                </div>
+              </div>
+              
+              <div className="mt-4 p-4 bg-primary/5 rounded-lg">
+                <h3 className="font-medium text-sm uppercase tracking-wide text-primary">Shipping Information</h3>
+                <p className="mt-2 text-sm">Free shipping on all orders. Boxes ship on the 15th of each month.</p>
               </div>
             </div>
           </div>
