@@ -35,7 +35,7 @@ const ForgotPassword = () => {
     try {
       await resetPassword(email);
       setIsLoading(false);
-      // The success toast is shown in the resetPassword function
+      // The success alert is shown in the resetPassword function
     } catch (error) {
       setIsLoading(false);
     }

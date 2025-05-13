@@ -42,7 +42,6 @@ const Profile = () => {
     setIsUpdating(true);
     try {
       await updateUserProfile(displayName, photoURL);
-      toast.success("Profile updated successfully");
     } catch (error) {
       // Error is handled in the context
     } finally {
